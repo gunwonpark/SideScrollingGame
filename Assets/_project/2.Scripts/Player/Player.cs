@@ -1,68 +1,53 @@
 using UnityEngine;
 
-/// <summary>
-/// 플레이어는 좌우로만 이동이 가능하다.
-/// </summary>
-[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody2D;
-    private SpriteRenderer _body;
+    [Header("Weapon")]
+    [SerializeField] private Arrow _arrow;
+
+    [Header("PlayerInfo")]
+    [SerializeField] private float _attackRange = 5.0f;
+    [SerializeField] private float _attackSpeed = 1.0f;
+
+    private float _attackTimer = 0.0f;
+
     private Animator _ani;
-    private PlayerData _playerData => DataManager.Instance.PlayerData;
 
-    private bool _isMove = false;
-
-    private void Start()
+    public void Start()
     {
         Init();
     }
     public void Init()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _body = GetComponent<SpriteRenderer>();
         _ani = GetComponent<Animator>();
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
-        Move();
+        Attack();
     }
-    public void Move()
+    public void Attack()
     {
-        float _inputX = Input.GetAxisRaw("Horizontal");
-
-        if (_inputX != 0)
+        _attackTimer += Time.deltaTime;
+        if (_attackTimer >= _attackSpeed)
         {
-            Vector2 _movePosition = (Vector2)transform.position + Vector2.right * _inputX * _playerData.moveSpeed * Time.fixedDeltaTime;
-            _rigidbody2D.MovePosition(_movePosition);
-
-            _body.flipX = (_inputX == 1) ? false : true;
-
-            SetState(PlayerState.Move);
+            // 현재 몬스터가 한마리 뿐이여서 상관 없다
+            Collider2D _object = Physics2D.OverlapCircle(transform.position, _attackRange, LayerMask.GetMask("Monster"));
+            if (_object != null)
+            {
+                Arrow _arrowObject = Instantiate(_arrow, transform.position, Quaternion.identity);
+                // 플레이어는 고정 오른쪽에서만 몬스터가 나온다
+                _arrowObject.Shoot(Vector2.right);
+                _attackTimer = 0.0f;
+                _ani.SetTrigger("Skill1");
+            }
         }
-        else
-        {
-            SetState(PlayerState.Idle);
-            _isMove = false;
-        }
+        return;
     }
 
-    public void SetState(PlayerState _state)
+    private void OnDrawGizmos()
     {
-        switch (_state)
-        {
-            case PlayerState.Idle:
-                _ani.SetInteger("State", (int)PlayerState.Idle);
-                break;
-            case PlayerState.Move:
-                _ani.SetInteger("State", (int)PlayerState.Move);
-                break;
-            case PlayerState.Attack:
-                _ani.SetInteger("State", (int)PlayerState.Attack);
-                break;
-            case PlayerState.Die:
-                _ani.SetInteger("State", (int)PlayerState.Die);
-                break;
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _attackRange);
     }
 }
