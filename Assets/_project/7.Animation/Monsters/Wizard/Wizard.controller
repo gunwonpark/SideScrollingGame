@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 66209a713b9418a4b8a170164cafe3f0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3518d5b7783932a44bfc47cf89a5d749, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dc7510ebcbc9644448fda5cd062f1f46, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4b120c946238d4446a7a16d443d31b2b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -160,7 +160,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EleteOrc
+  m_Name: Wizard
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: State
@@ -263,7 +263,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 40149958e7f46da44a5c077168f2e567, type: 2}
+  m_Motion: {fileID: 7400000, guid: a33669583dbcf2a4d827b8075fa1fced, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -311,7 +311,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2a657d3b83fbeff46a249e0e56c400c5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2b0211c1188dc0444a3884be15655752, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -364,7 +364,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dc7dd68b94c20544d8a40fe5ba296552, type: 2}
+  m_Motion: {fileID: 7400000, guid: dbf1af3762332804b9656bdb71cdabc8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

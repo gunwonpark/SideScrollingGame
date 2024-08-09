@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public abstract class DataBase<T>
 {
     protected Dictionary<int, T> _datas = new Dictionary<int, T>();
-
+    public int Count => _datas.Count;
     public void Init(string[] _datas)
     {
         LoadData(_datas);

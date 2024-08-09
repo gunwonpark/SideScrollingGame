@@ -25,7 +25,7 @@ public struct MonsterData
 [Serializable]
 public class MonsterDataBase : DataBase<MonsterData>
 {
-    public List<MonsterData> _monsterDatas = new List<MonsterData>();
+    private List<MonsterData> _monsterDatas = new List<MonsterData>();
 
     public override void LoadData(string[] _datas)
     {
@@ -45,7 +45,6 @@ public class MonsterDataBase : DataBase<MonsterData>
             _monsterData.grade = (MonsterGrade)Enum.Parse(typeof(MonsterGrade), _splitData[2]);
             _monsterData.speed = float.Parse(_splitData[3]);
             _monsterData.health = float.Parse(_splitData[4]);
-
             _monsterDatas.Add(_monsterData);
         }
 

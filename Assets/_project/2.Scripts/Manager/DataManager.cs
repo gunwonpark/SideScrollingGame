@@ -7,7 +7,6 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance { get; private set; }
 
     [field: SerializeField] public MonsterDataBase MonsterDatas { get; private set; }
-
     public void Init()
     {
         if (Instance == null)

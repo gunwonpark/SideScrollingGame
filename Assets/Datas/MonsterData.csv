@@ -1,6 +1,6 @@
 ID,Name,Grade,Speed,Health
 1,Skeleton,Normal,0.5,50
-2,Elite Orc,Rare,1.0,100
+2,EliteOrc,Rare,1,100
 3,Wizard,Magic,0.8,200
-4,Werebear,Legend,2.0,500
-5,Orc rider,Hero,2.5,1000
+4,Werebear,Legend,2,500
+5,OrcRider,Hero,2.5,1000
