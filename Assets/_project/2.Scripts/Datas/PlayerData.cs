@@ -1,7 +1,7 @@
-using UnityEngine;
+using System;
 
-[CreateAssetMenu(fileName = "PlayerData", menuName = "Data/PlayerData")]
-public class PlayerData : ScriptableObject
+[Serializable]
+public class PlayerData
 {
 
 }

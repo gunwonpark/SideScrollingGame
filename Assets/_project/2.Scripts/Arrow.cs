@@ -17,6 +17,10 @@ public class Arrow : Projectile
     {
         if (collision.CompareTag("Monster"))
         {
+            if (collision.TryGetComponent<IDamageable>(out IDamageable _damageable))
+            {
+                _damageable.OnDamage(100);
+            }
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Wall"))
